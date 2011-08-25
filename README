@@ -1,0 +1,57 @@
+=========================================
+About
+=========================================
+
+gsbackup is a web application (and shell script) written to make
+backups simple on the (gs) Grid-Service.   The (gs) Grid-Service is 
+(mt) Media Temple's popular web hosting platform  This tool is not 
+provided or officially supported by (mt) Media Temple, but was
+written by someone with extensive knowledge of the system.
+
+gsbackup is 100% free to use (not counting any fees associated with 
+Amazon's S3 service), and is an open source software (specific 
+license TBD).  The tool was initially written by Matthew Bell.
+
+=========================================
+MANUAL INSTALL PROCESS
+=========================================
+
+1) Extract files somewhere in your 'domains' folder
+
+2) Create a database, 'db#####_gsbackup' is the default, but can be
+specified in step 3
+
+3) Finish installation in the web installer.  Navigate via browser 
+to wherever you installed.  If you have the extracted files in 
+'domains/backup.example.com/html/', you'd go to 
+"http://backup.example.com/".
+
+It is highly recommended that you use your 'database administrator'
+user (db###### for most sites, replacing ###### with your Site ID),
+as write access is required to backup a database (because of locking).
+
+To use Amazon S3 functionality, you'll need to provide your 'access 
+key' and 'secret access key'.  These can be found in your Amazon 
+control panel at "http://aws.amazon.com/".  The "S3 Remote Path" field
+is formatted like this: "/bucket/extra/path/info/".  You need to 
+specify at least "/bucket/".  Files will be uploaded to 
+"/bucket/extra/path/info/CONFIGURATION_NAME".
+
+=========================================
+REPORTING ISSUES
+=========================================
+
+If you find bugs, please report them at:
+http://github.com/mdylanbell/gsbackup/issues
+
+Feel free to report feature requests as well.  Any other reports or 
+inquiries can be sent to:
+matt@gsbackup.org
+
+=========================================
+KNOWN ISSUES
+=========================================
+
+* If you delete a domain folder which is specified in a configuration,
+you'll get an error when you try to create a backup with that 
+configuration.  To work around this, simply re-save the configuration.

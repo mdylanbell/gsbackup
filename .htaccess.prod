@@ -1,0 +1,48 @@
+AddHandler php5-script .php
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^download/(.*)$ ./download.php?file=$1
+
+#Enable compression
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+#Disable ETag
+Header unset ETag
+FileETag None
+
+# Expires headers
+# 1 YEAR
+<FilesMatch "\.(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+ExpiresDefault "access plus 1 years"
+</FilesMatch>
+
+# 2 MONTHS
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=4838400, public"
+ExpiresDefault "access plus 2 months"
+</FilesMatch>
+
+# 1 WEEK
+<FilesMatch "\.(xml|txt|css|js)$">
+Header set Cache-Control "max-age=604800, public"
+ExpiresDefault "access plus 1 weeks"
+</FilesMatch>
+
+# 30 MIN
+<FilesMatch "\.(html|htm|php)$">
+Header set Cache-Control "max-age=1800, private, proxy-revalidate"
+ExpiresDefault "access plus 30 minutes"
+</FilesMatch>

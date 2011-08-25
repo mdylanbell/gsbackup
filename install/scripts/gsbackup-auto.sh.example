@@ -1,0 +1,34 @@
+#!/bin/bash
+
+script=$HOME/bin/gsbackup.sh
+
+domain="-C $HOME/domains"
+
+db_user="dbxxxxx"
+db_pass="mysql_user_password"
+
+# Define dbinfo so you can just use $dbinfo instead of having to
+# specify -u and -p all the time
+dbinfo="-u $db_user -p $db_pass"
+
+### Enable these options if you want to upload to s3
+# s3path=/mybucket/backups/websites/
+# s3info="-S -s $s3path"
+
+### Backup mydomain1.com, no databases
+#$script -l mydomain1.com -C $HOME/domains mydomain1.com
+
+### Backup mydomain2.com, with 1 database
+#$script -l mydomain2.com_with_db $domain -d dbxx_mydb1 $dbinfo mydomain2.com
+
+### Backup mybigsite.com, with 2 databases and all subdomains
+#$script -l mybigsite.com_everything $domain $dbinfo \
+#    -d dbxx_mydb2 -d dbxx_mydb3 *mybigsite.com
+
+### Backup mybusiness.net, with 3 databases stored into 1 file, and upload to s3
+#$script -l mybusiness.net $domain -d dbxx_mydb1 -d dbxx_mydb2 -d dbx_mydb3 \
+#     $dbinfo $s3info *mybusiness.net
+
+### Backup all domains and all databases
+#$script -l all_gs -C $HOME $dbinfo -d mydb1 -d mydb2 -d mydb3 -d mydb4 \
+#     -d mydb5 domains

@@ -1,0 +1,9 @@
+AddHandler php5-script .php
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^download/(.*)$ ./download.php?file=$1
+
