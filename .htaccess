@@ -7,8 +7,3 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^download/(.*)$ ./download.php?file=$1
 
-AuthUserFile /home/126736/domains/test/html/gsbackup/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Private"
-AuthType Basic
-Require valid-user
