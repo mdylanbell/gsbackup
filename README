@@ -23,8 +23,8 @@ specified in step 3
 
 3) Finish installation in the web installer.  Navigate via browser 
 to wherever you installed.  If you have the extracted files in 
-'domains/backup.example.com/html/', you'd go to 
-"http://backup.example.com/".
+'domains/backup.example.com/html/', you'd go to:
+http://backup.example.com/
 
 It is highly recommended that you use your 'database administrator'
 user (db###### for most sites, replacing ###### with your Site ID),
@@ -32,10 +32,12 @@ as write access is required to backup a database (because of locking).
 
 To use Amazon S3 functionality, you'll need to provide your 'access 
 key' and 'secret access key'.  These can be found in your Amazon 
-control panel at "http://aws.amazon.com/".  The "S3 Remote Path" field
-is formatted like this: "/bucket/extra/path/info/".  You need to 
-specify at least "/bucket/".  Files will be uploaded to 
-"/bucket/extra/path/info/CONFIGURATION_NAME".
+control panel at:
+http://aws.amazon.com/
+
+The "S3 Remote Path" field is formatted like this: 
+"/bucket/extra/path/info/".  You need to specify at least "/bucket/".
+Files will be uploaded to "/bucket/extra/path/info/CONFIGURATION_NAME".
 
 =========================================
 REPORTING ISSUES
