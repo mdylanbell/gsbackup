@@ -187,17 +187,21 @@ if ($return) {
     $error = true;
 }
 
-exec("install/install.sh --with-s3", $output, $return);
-if ($return) {
-    echo "Failed running install.sh:<br />\n";
-    foreach($output as $o)
-        echo "$o<br />\n";
-    $error = true;
+if ( !$error ) {
+    exec("install/install.sh --with-s3", $output, $return);
+    if ($return) {
+        echo "Failed running install.sh:<br />\n";
+        foreach($output as $o)
+            echo "$o<br />\n";
+        $error = true;
+    }
 }
 
-if (!write_config_file($_POST, $error_msg)) {
-    echo "Failed to write config file: $error_msg";
-    $error = true;
+if ( !$error ) {
+    if (!write_config_file($_POST, $error_msg)) {
+        echo "Failed to write config file: $error_msg";
+        $error = true;
+    }
 }
 
 if ($error)
