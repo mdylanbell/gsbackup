@@ -3,7 +3,7 @@
 if (file_exists('includes/config.php'))
     require_once('includes/config.php');
     
-define('DEBUG', true);
+define('DEBUG', false);
 
 /******************************************************************************
  * Path settings
