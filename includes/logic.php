@@ -45,8 +45,9 @@ function initialize_domains(&$domains)
     $dh = opendir(DOMAINS_PATH);
     while (($filename = readdir($dh)) != false)
     {
-        if (is_dir(DOMAINS_PATH . $filename) && $filename != "." && 
-            $filename != "..")
+        if (is_dir(DOMAINS_PATH . $filename) && 
+            !is_link(DOMAINS_PATH . $filename ) && 
+            $filename != "." && $filename != ".." )
         {
             $ignore = false;
 
