@@ -19,9 +19,9 @@ function t_head()
     <title>\$title</title>
     <link rel="stylesheet" href="media/reset.css" type="text/css" />
     <link rel="stylesheet" href="media/$style" type="text/css" />
-    <link rel="stylesheet" href="media/uniform.css type="text/css" />
+    <link rel="stylesheet" href="media/uniform.css" type="text/css" />
     <script type="text/javascript" src="media/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="media/jquery.uniform.js"></script>
+    <script type="text/javascript" src="media/jquery.uniform.min.js"></script>
     <script type="text/javascript" src="media/$js"></script>
 
     <script type="text/javascript">
