@@ -17,7 +17,7 @@ body {
     width: 100%;
     background-repeat: repeat-x;
 
-    background-image: url(tall_grad.png);
+    background-image: url(../images/tall_grad.png);
     background-color: white;
 
 	margin-bottom: 100px;

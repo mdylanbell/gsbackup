@@ -17,12 +17,12 @@ function t_head()
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>\$title</title>
-    <link rel="stylesheet" href="media/reset.css" type="text/css" />
-    <link rel="stylesheet" href="media/$style" type="text/css" />
-    <link rel="stylesheet" href="media/uniform.css" type="text/css" />
-    <script type="text/javascript" src="media/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="media/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="media/$js"></script>
+    <link rel="stylesheet" href="media/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="media/css/$style" type="text/css" />
+    <link rel="stylesheet" href="media/css/uniform.css" type="text/css" />
+    <script type="text/javascript" src="media/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="media/js/$js"></script>
 
     <script type="text/javascript">
         <!--
