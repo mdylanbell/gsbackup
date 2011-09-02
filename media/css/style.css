@@ -45,11 +45,14 @@ body div.content {
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: white;
 }
 
+/* MDB: uniform.js
 li input[type="checkbox"] {
     margin-left: -7px;
 }
+*/
 
 h1, h2, h3, h4 {
     margin-left: 20px;
@@ -78,10 +81,12 @@ ol {
 }
 
 li {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 16px;
 }
 
+/* MDB: uniform.js
 .text {
     font-family: monospace;
     border-color: black;
@@ -96,6 +101,7 @@ input {
     margin: 0px;
     padding: 0px;
 }
+*/
 
 .section, body > div.wrapper {
     border-width: 6px;
@@ -126,12 +132,12 @@ input {
     margin-bottom: 10px;
     padding-top: 5px;
     padding-right: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     padding-left: 10px;
     
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
 }
 
 .panel {
@@ -167,14 +173,22 @@ input {
 
 .select-list li:first-child {
 	font-size: 100%;
+    height: 26px;
+    background-color: #efefef;
+    width: 300px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
 
 .select-list li {
 	font-size: 80%;
-	padding-right: 8px;
-	padding-left: 8px;
-	padding-bottom: 3px;
-	padding-top: 3px;
+    padding-right: 8px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+    height: 24px;
+    margin: 0px;
 }
 
 .select-list li p {
@@ -186,6 +200,38 @@ input {
 .text-label {
 	padding-left: 3px;
 	display: block;
+}
+
+.select-list li * {
+    vertical-align: middle;
+}
+
+.btn {
+    font-size:1em;
+    color:#234e70;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    -webkit-box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
+    -moz-box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
+    box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
+    border:solid 1px #6e93b0;
+    background:url('../images/btn-sm-bg.png') repeat-x 0px 0px;
+    height:27px;line-height:26px;
+    text-shadow:rgba(255,255,255,0.5) 0px 1px 0px;
+    display:inline;
+    float:left;
+    margin-right:5px;
+    padding:0 10px
+}
+
+.btn:hover {
+    text-decoration:none;
+    color:#234e70
+}
+
+.btn:active {
+    background-position:0px bottom
 }
 
 tr {
@@ -209,6 +255,7 @@ td:first-child {
 	width: 10px;
 }
 
+/*
 td input {
 	margin: 0px;
 }
@@ -220,6 +267,7 @@ td input.checkbox {
     top: 0px;
     left: 0px;
 }
+*/
 
 .configuration-list label {
 	padding-right: 10px;

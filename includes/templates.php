@@ -27,7 +27,7 @@ function t_head()
     <script type="text/javascript">
         <!--
         $(function(){
-            $("select, input:checkbox, input:radio, input:file").uniform();
+            $("select, input:checkbox, input:radio, input:file, input:button, input:text, input:password, input:submit").uniform();
         });
         // -->
     </script>
@@ -54,6 +54,11 @@ function t_popup()
         <input type="button" id="popup-button-submit" value="Confirm" />
         <input type="button" id="popup-button-cancel" class="popup-cancel" value="Cancel" />
         <input type="button" id="popup-button-close" class="popup-close" value="OK" />
+<!-- MDB: New buttons
+        <a rel="submit" class="btn" href="#" id="popup-button-submit" value="Confirm" />
+        <a rel="cacnel" class="btn" id="popup-button-cancel"  value="Cancel" />
+        <a rel="ok" class="btn" id="popup-button-close" value="OK" />
+-->
     </div>
 </div>
 <div id="popup-background"></div>
@@ -143,19 +148,19 @@ function t_settings_database($v)
 <ol>
     <li>
         <label for="settings-dbhost" class="text-label">Database Host</label>
-        <input type="text" name="dbhost" value="\$db_hostname" id="settings-dbhost" class="text" size="40" />
+        <input type="text" name="dbhost" value="\$db_hostname" id="settings-dbhost" size="40" />
     </li><li>
         <label for="settings-database" class="text-label">Database</label>
-        <input type="text" name="database" value="\$db_database" id="settings-database" class="text" size="40" />
+        <input type="text" name="database" value="\$db_database" id="settings-database" size="40" />
     </li><li>
         <label for="settings-dbuser" class="text-label">Database User</label>
-        <input type="text" name="dbuser" value="\$db_username" id="settings-dbuser" class="text" size="14" />
+        <input type="text" name="dbuser" value="\$db_username" id="settings-dbuser" size="14" />
     </li><li>
         <label for="settings-dbpass" class="text-label">Database Password</label>
-        <input type="password" name="dbpass" value="" id="settings-dbpass" class="text" size="20" />
+        <input type="password" name="dbpass" value="" id="settings-dbpass" size="20" />
     </li><li>
         <label for="settings-confirm-dbpass" class="text-label">Confirm Database Password</label>
-        <input type="password" name="dbpass2" value="" id="settings-confirm-dbpass" class="text" size="20" />
+        <input type="password" name="dbpass2" value="" id="settings-confirm-dbpass" size="20" />
     </li>
 </ol>
 EOT;
@@ -172,13 +177,13 @@ function t_settings_s3()
         <label for="settings-s3-enabled">Upload to S3</label>
     </li><li>
         <label for="settings-s3-remotepath" class="text-label">S3 Remote Path</label>
-        <input type="text" name="settings-s3-remotepath" value="\$s3_remote_path" id="settings-s3-remotepath" class="text" size="40" />
+        <input type="text" name="settings-s3-remotepath" value="\$s3_remote_path" id="settings-s3-remotepath" size="40" />
     </li><li>
         <label for="settings-s3-accesskey" class="text-label">Access Key</label>
-        <input type="text" name="settings-s3-accesskey" value="\$s3_access_key" id="settings-s3-accesskey" class="text" size="40" />
+        <input type="text" name="settings-s3-accesskey" value="\$s3_access_key" id="settings-s3-accesskey" size="40" />
     </li><li>
         <label for="settings-s3-secretkey" class="text-label">Secret Key</label>
-        <input type="password" name="settings-s3-secretkey" value="\$s3_secret_key" id="settings-s3-secretkey" class="text" size="40" />
+        <input type="password" name="settings-s3-secretkey" value="\$s3_secret_key" id="settings-s3-secretkey" size="40" />
     </li><li>
         <input type="checkbox" name="settings-s3-usehttps" value="1" id="settings-s3-usehttps" \$s3_use_https />
         <label for="settings-s3-usehttps">Use HTTPS for upload</label>
@@ -193,13 +198,13 @@ function t_settings_login()
 <ol>
     <li>
         <label for="settings-login-name" class="text-label">Username</label>
-        <input type="text" name="settings-login-username" value="\$login_username" id="settings-login-name" class="text" size="40" />
+        <input type="text" name="settings-login-username" value="\$login_username" id="settings-login-name" size="40" />
     </li><li>
         <label for="settings-login-password" class="text-label">Login Password</label>
-        <input type="password" name="settings-login-password" value="" id="settings-login-password" class="text" size="40" />
+        <input type="password" name="settings-login-password" value="" id="settings-login-password" size="40" />
     </li><li>
         <label for="settings-login-password2" class="text-label">Confirm Login Password</label>
-        <input type="password" name="settings-login-password2" value="" id="settings-login-password2" class="text" size="40" />
+        <input type="password" name="settings-login-password2" value="" id="settings-login-password2" size="40" />
     </li>
 </ol>
 EOT;
@@ -233,7 +238,7 @@ function t_configuration($v)
 <ol>
     <li>
         <label for="\$prefix-name" class="text-label">Name of configuration</label>
-        <input type="text" name="name" value="\$name" class="text" id="\$prefix-name" size="30" />
+        <input type="text" name="name" value="\$name" id="\$prefix-name" size="30" />
     </li>
 EOT;
 
@@ -242,7 +247,7 @@ EOT;
 
     <li>
         <label for="\$prefix-num-backups" class="left-label">Number of backups to keep</label>
-        <input type="text" name="num_backups" value="\$num_backups" class="text" id="\$prefix-num-backups" size="3" />
+        <input type="text" name="num_backups" value="\$num_backups" id="\$prefix-num-backups" size="3" />
     </li>
 EOT;
     }
@@ -267,7 +272,7 @@ EOT;
                         <label for="\$prefix-s3-enabled">Upload to S3</label>
                     </li><li>
                         <label for="\$prefix-s3-path" class="text-label">S3 Remote Path</label>
-                        <input type="text" name="s3_remote_path" id="\$prefix-s3-path" class="text" size="40" value="\$s3_remote_path" />
+                        <input type="text" name="s3_remote_path" id="\$prefix-s3-path" size="40" value="\$s3_remote_path" />
                     </li>
                 </ol>
             </div>
@@ -291,6 +296,9 @@ function t_backup_configuration($nothing)
     <li>
         <label for="\$prefix-\$id">\$name</label>
         <input type="button" name="\$name" value="Backup now" class="backup-button" id="\$prefix-\$id" />
+<!-- MDB: New Buttons
+        <a rel="\$prefix-\$id" class="btn" name="\$name" class="backup-button" id="\$prefix-\$id">Backup now</a>
+-->
     </li>
 </ol>
 EOT;
