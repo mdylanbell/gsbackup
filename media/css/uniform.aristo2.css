@@ -399,6 +399,7 @@ div.button span {
   text-transform: uppercase;
   padding-left: 2px;
   padding-right: 15px;
+  vertical-align: middle
 }
 
 /* Select */

@@ -9,8 +9,9 @@ class Layer
     private $head_text = null;
     private $sublayers = array();
     private $panel_layer = false;
+    private $icon = null;
 
-    public function __construct($name, $head_text=null, $text=null, $sublayers=null)
+    public function __construct($name, $head_text=null, $text=null, $sublayers=null,$icon=null)
     {
         $this->name = $name;
         $this->head_text = $head_text;
@@ -18,6 +19,8 @@ class Layer
         
         if ($sublayers)
             $this->attach_layers($sublayers);
+
+        $this->icon = $icon;
     }
 
     public function attach_layers($sublayers)
@@ -77,7 +80,11 @@ class Layer
         if ($this->panel_layer)
             echo render_template("t_panel_layer_head", 
                 array("name"  => $this->name, "layer" => $layer), 
-                array("layer" => $layer, 'name' => $this->name)
+                array(
+                    "layer" => $layer,
+                    "name"  => $this->name,
+                    "icon"  => $this->icon
+                )
             );
         else
            echo render_template("t_nopanel_layer_head", array("layer" => $layer));
@@ -103,10 +110,15 @@ function t_panel_layer_head($v)
         $id = " id='$id'";
     }
 
+    if ($v['icon']) {
+        $icon = "<img src='media/images/icons/{$v['icon']}' />";
+    }
+
     return <<<EOT
 
 <div class="wrapper panel\$layer"$id>
     <div class="panel-trigger">
+        $icon
         <h$wrap><a href="javascript:void(0);">\$name</a></h$wrap>
     </div>
     <div class="panel">
