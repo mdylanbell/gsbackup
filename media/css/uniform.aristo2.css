@@ -402,7 +402,8 @@ div.button span {
 
 /* Select */
 div.selector {
-  margin-bottom: 20px;
+/*  margin-bottom: 20px; */
+  margin-bottom: 5px;
   width: 190px;
   font-weight: bold;
   color: #464545;
@@ -411,6 +412,7 @@ div.selector {
 
 div.selector select {
   width: 190px;
+  height: 32px; /* MDB Added */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	border: solid 1px #fff;

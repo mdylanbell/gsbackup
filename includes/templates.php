@@ -20,14 +20,14 @@ function t_head()
     <link rel="stylesheet" href="media/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="media/css/$style" type="text/css" />
     <link rel="stylesheet" href="media/css/uniform.css" type="text/css" />
-    <script type="text/javascript" src="media/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="media/js/jquery.uniform.min.js"></script>
     <script type="text/javascript" src="media/js/$js"></script>
 
     <script type="text/javascript">
         <!--
         $(function(){
-            $("select, input:checkbox, input:radio, input:file, input:button, input:text, input:password, input:submit").uniform();
+            $("select, input:checkbox, input:button, input:text, input:password, input:submit").uniform();
         });
         // -->
     </script>

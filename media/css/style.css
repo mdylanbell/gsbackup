@@ -80,6 +80,10 @@ ol {
     padding-bottom: 4px;
 }
 
+li:first-child {
+    margin-top: 10px;
+}
+
 li {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -104,9 +108,9 @@ input {
 */
 
 .section, body > div.wrapper {
-    border-width: 6px;
+    border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: #888;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 0px;

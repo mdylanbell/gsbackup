@@ -1,40 +1,7 @@
-/*   Will prevent text selection, but also messes up editing text
-window.onload = function() {
-    var e = document.getElementsByTagName('body')[0];
-    e.onselectstart = function() {return false;} // ie
-    e.onmousedown = function() {return false;} // mozilla
-}
-*/
-
 $(document).ready(function(){
     $(".panel-trigger").click(function(){
         $(this).next('.panel').slideToggle("fast");
     });
-
-// on hover, show indicator (up or down arrow depending on state?)
-
-/*
-    $(".panel-trigger").hover(
-        function(){
-            var parent = $(this).parent();
-            border = $(parent).css("border");
-            $(parent).css("border", "1px solid yellow");
-        }, function(){
-            $(this).parent().css("border", border);
-        }
-    );
-*/
-/*
-    $(".panel-trigger").hover(
-        function(){
-            color = $(this).parent().css("background-color");
-            $(this).parent().css("background-color", "yellow");
-        }, function(){
-            $(this).parent().css("background-color", color);
-        }
-    );
-*/
-
 
     // Disable 'submit' button on 'install' page after submitted
     $('#form_install').submit(function(){
@@ -45,9 +12,21 @@ $(document).ready(function(){
     //  Open or close custom s3 flyout when selection is made
     $("select").change(function(){
         if ($(this).val() == "1") {
+            /* MDB: Uniform.js tweak
             $(this).next('.panel').slideDown("fast");
+            */
+            $(this).closest('li').find('.panel').slideDown("fast");
+            $(this).closest('li').css({
+                'background-color': '#efefef',
+                'width': '310',
+                'border-radius': '4px',
+                '-moz-border-radius': '4px',
+                '-webkit-border-radius': '4px'
+            });
+
         } else {
-            $(this).next('.panel').slideUp("fast");
+            $(this).closest('li').find('.panel').slideUp("fast");
+            $(this).closest('li').css({'background-color': ''});
         }
     });
 
@@ -55,6 +34,15 @@ $(document).ready(function(){
     $("select").each(function() {
         if ($(this).val() == "1") {
             $(this).next('.panel').css("display", "block");
+            $(this).closest('li').css({
+                'background-color': '#efefef',
+                'width': '310',
+                'border-radius': '4px',
+                '-moz-border-radius': '4px',
+                '-webkit-border-radius': '4px'
+            });
+        } else {
+            $(this).closest('li').css('background-color', '');
         }
     });
 
@@ -63,18 +51,26 @@ $(document).ready(function(){
             var name = $(this).attr("name");
             var value = $(this).attr("checked");
 
-            $(this).closest('form').find("input[name="+name+"]").each(function() {
-                $(this).attr("checked", value);
+            $(this).closest('form').find("input[name='"+name+"']").each(function() {
+                if (value == 'checked' && !$(this).attr('checked')) {
+                    $(this).attr("checked", value);
+                    $.uniform.update($(this));
+                } else if (!value && $(this).attr('checked') == 'checked') {
+                    $(this).removeAttr('checked');
+                    $.uniform.update($(this));
+                }
             });
     });
 
     // Disable 'all' checkbox if individual checkbox is selected
     $("input[type='checkbox'][value!='all']").change(function() {
         var name = $(this).attr("name");
-        var all_obj = $(this).closest('form').find("input[name="+name+"][value='all']");
+        var all_obj = $(this).closest('form').find("input[name='"+name+"'][value='all']");
 
         if (all_obj.attr('checked')) {
-            all_obj.attr('checked', false);
+            //all_obj.attr('checked', false);
+            all_obj.removeAttr('checked');
+            $.uniform.update(all_obj);
         }
     });
     
