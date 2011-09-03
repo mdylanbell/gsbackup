@@ -2,28 +2,35 @@
 
 function t_head()
 {
-    if (DEBUG)
-    {
-        $style = "style.css";
-        $js = "gsbackup.js";
-    } else {
-        $style = "style.min.css";
-        $js = "gsbackup.min.js";
-    }
+    $js = array(
+        "jquery-1.6.2",
+        "jquery.uniform",
+        "gsbackup",
+    );
 
-    return <<<EOT
+    $css = array(
+        "reset",
+        "style",
+        "uniform.aristo2",
+    );
+
+    $ret = <<<EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>\$title</title>
-    <link rel="stylesheet" href="media/css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="media/css/$style" type="text/css" />
-    <link rel="stylesheet" href="media/css/uniform.css" type="text/css" />
-    <script type="text/javascript" src="media/js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="media/js/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="media/js/$js"></script>
 
+EOT;
+
+    foreach ( $css as $file ) {
+        $ret .= "    <link rel='stylesheet' href='media/css/$file" . (DEBUG ? '' : '.min') . ".css' type='text/css' />\n";
+    }
+    foreach ( $js as $file ) {
+        $ret .= "    <script type='text/javascript' src='media/js/$file" . (DEBUG ? '' : '.min') . ".js'></script>\n";
+    }
+
+    $ret .= <<<EOT
     <script type="text/javascript">
         <!--
         $(function(){
@@ -34,6 +41,8 @@ function t_head()
 </head>
 <body>
 EOT;
+
+    return $ret;
 }
 
 
@@ -54,11 +63,6 @@ function t_popup()
         <input type="button" id="popup-button-submit" value="Confirm" />
         <input type="button" id="popup-button-cancel" class="popup-cancel" value="Cancel" />
         <input type="button" id="popup-button-close" class="popup-close" value="OK" />
-<!-- MDB: New buttons
-        <a rel="submit" class="btn" href="#" id="popup-button-submit" value="Confirm" />
-        <a rel="cacnel" class="btn" id="popup-button-cancel"  value="Cancel" />
-        <a rel="ok" class="btn" id="popup-button-close" value="OK" />
--->
     </div>
 </div>
 <div id="popup-background"></div>
@@ -296,9 +300,6 @@ function t_backup_configuration($nothing)
     <li>
         <label for="\$prefix-\$id">\$name</label>
         <input type="button" name="\$name" value="Backup now" class="backup-button" id="\$prefix-\$id" />
-<!-- MDB: New Buttons
-        <a rel="\$prefix-\$id" class="btn" name="\$name" class="backup-button" id="\$prefix-\$id">Backup now</a>
--->
     </li>
 </ol>
 EOT;

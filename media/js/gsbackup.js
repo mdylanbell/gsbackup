@@ -241,17 +241,17 @@ function change_popup(text, button, show_cancel) {
     }
 
     // Enable submit or close button (or neither)
-    $("#popup-button-submit").hide();
-    $("#popup-button-close").hide();
+    $("#uniform-popup-button-submit").hide();
+    $("#uniform-popup-button-close").hide();
     if (button != "none") {
-        $("#popup-button-" + button).show();
+        $("#uniform-popup-button-" + button).show();
     }
 
     // Show or hide cancel button
     if (show_cancel) {
-        $("#popup-button-cancel").show();
+        $("#uniform-popup-button-cancel").show();
     } else {
-        $("#popup-button-cancel").hide();
+        $("#uniform-popup-button-cancel").hide();
     }
 }
 

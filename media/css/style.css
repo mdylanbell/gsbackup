@@ -185,6 +185,10 @@ input {
     -webkit-border-radius: 4px;
 }
 
+option {
+    font-size: 90%;
+}
+
 .select-list li {
 	font-size: 80%;
     padding-right: 8px;
@@ -208,34 +212,6 @@ input {
 
 .select-list li * {
     vertical-align: middle;
-}
-
-.btn {
-    font-size:1em;
-    color:#234e70;
-    border-radius:2px;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    -webkit-box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
-    -moz-box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
-    box-shadow:rgba(0,0,0,0.15) 0px 1px 3px;
-    border:solid 1px #6e93b0;
-    background:url('../images/btn-sm-bg.png') repeat-x 0px 0px;
-    height:27px;line-height:26px;
-    text-shadow:rgba(255,255,255,0.5) 0px 1px 0px;
-    display:inline;
-    float:left;
-    margin-right:5px;
-    padding:0 10px
-}
-
-.btn:hover {
-    text-decoration:none;
-    color:#234e70
-}
-
-.btn:active {
-    background-position:0px bottom
 }
 
 tr {
