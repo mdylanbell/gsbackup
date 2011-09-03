@@ -24,7 +24,7 @@ function t_head()
 EOT;
 
     foreach ( $css as $file ) {
-        $ret .= "    <link rel='stylesheet' href='media/css/$file" . (DEBUG ? '' : '.min') . ".css' type='text/css' />\n";
+        $ret .= "    <link rel='stylesheet' href='media/css/$file" . ((DEBUG||$file === 'reset') ? '' : '.min') . ".css' type='text/css' />\n";
     }
     foreach ( $js as $file ) {
         $ret .= "    <script type='text/javascript' src='media/js/$file" . (DEBUG ? '' : '.min') . ".js'></script>\n";

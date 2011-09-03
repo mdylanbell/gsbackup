@@ -107,7 +107,7 @@ function make_existing_backup_configuration_layer($prefix, $name, $backups)
         if ($b->uploaded_to_s3)
             $s3status = "Uploaded to S3";
         else
-            $s3status = "<input type=\"button\" class=\"s3-upload-button\" name=\"{$b->filename}-s3-upload\" value=\"Upload to S3\" backup-id=\"{$b->id}\" />";
+            $s3status = "<input type=\"button\" class=\"s3-upload-button\" name=\"{$b->filename}-s3-upload\" value=\"Upload\" backup-id=\"{$b->id}\" />";
             
         /* Pretty-up the filesize */
         $b->filesize = format_bytes($b->filesize);
