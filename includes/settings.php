@@ -3,7 +3,7 @@
 if (file_exists('includes/config.php'))
     require_once('includes/config.php');
     
-define('DEBUG', true);
+define('DEBUG', false);
 
 /******************************************************************************
  * Path settings
@@ -64,7 +64,7 @@ define('PREFIX_EXISTING_BACKUP', 'eb');
 
 define('ALLOWED_LABEL_CHARACTERS', '\w\-=\+#\.');  // Allowed characters (regex)
 
-define('VERSION', "1.1");
+define('VERSION', "1.1.1");
 
 define('TITLE', "(gs) Grid-Service Backup Tool");
 

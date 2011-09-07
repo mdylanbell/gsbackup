@@ -77,7 +77,10 @@ class Layer
         if ($this->panel_layer)
             echo render_template("t_panel_layer_head", 
                 array("name"  => $this->name, "layer" => $layer), 
-                array("layer" => $layer, 'name' => $this->name)
+                array(
+                    "layer" => $layer,
+                    "name"  => $this->name,
+                )
             );
         else
            echo render_template("t_nopanel_layer_head", array("layer" => $layer));

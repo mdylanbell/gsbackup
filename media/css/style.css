@@ -48,12 +48,6 @@ body div.content {
   background-color: white;
 }
 
-/* MDB: uniform.js
-li input[type="checkbox"] {
-    margin-left: -7px;
-}
-*/
-
 h1, h2, h3, h4 {
     margin-left: 20px;
 }
@@ -88,24 +82,12 @@ li {
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 16px;
+    min-height: 24px;
 }
 
-/* MDB: uniform.js
-.text {
-    font-family: monospace;
-    border-color: black;
-    border-style: solid;
-    border-width: 2px;
-    padding: 3px;
-    font-size: 16px;
+li * {
+    vertical-align: middle;
 }
-
-input {
-    display: inline;
-    margin: 0px;
-    padding: 0px;
-}
-*/
 
 .section, body > div.wrapper {
     border-width: 1px;
@@ -180,6 +162,7 @@ input {
     height: 26px;
     background-color: #efefef;
     width: 300px;
+    font-weight: 900;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -228,26 +211,13 @@ td {
 	padding-right: 20px;
 	padding-top: 2px;
 	padding-bottom: 2px;
+    vertical-align: middle;
+    max-width: 200px;
 }
 
 td:first-child {
 	padding: 0px 5px 4px 0px;
-	width: 10px;
 }
-
-/*
-td input {
-	margin: 0px;
-}
-
-td input.checkbox {
-    position: absolute;
-    height: 13px;
-    width: 13px;
-    top: 0px;
-    left: 0px;
-}
-*/
 
 .configuration-list label {
 	padding-right: 10px;
@@ -356,3 +326,4 @@ body > form > input {
     margin-left: 20px;
     width: 750px;
 }
+
