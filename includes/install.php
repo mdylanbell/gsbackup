@@ -156,11 +156,10 @@ You can change all of these settings later in the "Settings" panel.<br />
 <div class="installer-text">
 
 Project Home: <a href="http://gsbackup.org">gsbackup.org</a><br />
-Author: <a href="mailto:matt@gsbackup.org">Matthew Bell</a><br />
-Bug tracker: <a href="http://bugs.mindthread.org">bugs.mindthread.org</a><br />
+Primary Author: <a href="mailto:matt@gsbackup.org">Matthew Bell</a><br />
+Bug tracker: <a href="http://github.com/mdylanbell/gsbackup/issues">github.com issue tracker</a><br />
 <br />
-github and/or Google code coming soon!<br />
-</p>
+Checkout the <a href="http://github.com/mdylanbell/gsbackup">Github project</a>.
 </div>
 
 <?php
