@@ -16,7 +16,7 @@ $(document).ready(function(){
             $(this).next('.panel').slideDown("fast");
             */
             $(this).closest('li').find('.panel').slideDown("fast");
-            $(this).closest('li').css({
+            $(this).closest('li').find('.panel').css({
                 'background-color': '#efefef',
                 'width': '310',
                 'border-radius': '4px',
@@ -26,7 +26,7 @@ $(document).ready(function(){
 
         } else {
             $(this).closest('li').find('.panel').slideUp("fast");
-            $(this).closest('li').css({'background-color': ''});
+            $(this).closest('li').find('.panel').css({'background-color': ''});
         }
     });
 
@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("select").each(function() {
         if ($(this).val() == "1") {
             $(this).next('.panel').css("display", "block");
-            $(this).closest('li').css({
+            $(this).next('.panel').find('.panel').css({
                 'background-color': '#efefef',
                 'width': '310',
                 'border-radius': '4px',

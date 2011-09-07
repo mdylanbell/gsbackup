@@ -88,6 +88,11 @@ li {
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 16px;
+    min-height: 24px;
+}
+
+li * {
+    vertical-align: middle;
 }
 
 /* MDB: uniform.js
@@ -180,6 +185,7 @@ input {
     height: 26px;
     background-color: #efefef;
     width: 300px;
+    font-weight: 900;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
