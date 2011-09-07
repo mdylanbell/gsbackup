@@ -285,3 +285,4 @@ function set_waiting(state) {
     $("#popup").css('cursor', cursor);
     $('#popup-background').css('cursor', cursor);
 }
+
