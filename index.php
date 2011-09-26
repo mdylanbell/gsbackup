@@ -15,6 +15,8 @@ function display_page($sections)
     {
         $s->render();
     }
+// Testing jquery.ui
+echo( '<div id="dialog"><p id="dialog-text"></p></div>' . "\n" );
     
     echo render_template("t_popup");
     echo render_template("t_foot");

@@ -11,6 +11,7 @@ function t_head()
     $css = array(
         "reset",
         "style",
+        "smoothness/jquery-ui-1.8.16.custom",
         "uniform.aristo2",
     );
 
@@ -31,10 +32,11 @@ EOT;
     }
 
     $ret .= <<<EOT
+    <script type='text/javascript' src='media/js/jquery-ui-1.8.16.custom.min.js'></script>
     <script type="text/javascript">
         <!--
         $(function(){
-            $("select, input:checkbox, input:button, input:text, input:password, input:submit").uniform();
+            $("select, input:checkbox, input:text, input:password").uniform();
         });
         // -->
     </script>
@@ -86,7 +88,9 @@ function t_selectlist_header($v)
 <ol class="select-list">
 <li>
     <input type="checkbox" name="{\$type}[]" value="all" id="\$prefix-all-\$type"$checked_text />
-    <label for="\$prefix-all-\$type">\$label</label>
+    <div class="checkbox-label">
+        <label for="\$prefix-all-\$type">\$label</label>
+    </div>
 </li>
 EOT;
 
@@ -106,7 +110,9 @@ function t_selectlist_item($v)
 
 <li>
     <input type="checkbox" name="{\$type}[]" value="\$item" id="\$prefix-\$item"$checked_text />
-    <label for="\$prefix-\$item">\$item</label>
+    <div class="checkbox-label">
+        <label for="\$prefix-\$item">\$item</label>
+    </div>
 </li>
 EOT;
 
@@ -140,7 +146,7 @@ function t_settings_foot()
 {
     return <<<EOT
 
-    <input type="submit" id="settings-save" value="Save Settings" />
+    <button type="submit" id="settings-save"><span class="ui-icon ui-icon-pencil"></span>Save Settings</button>
 </form>
 EOT;
 }
@@ -250,8 +256,8 @@ EOT;
         $return .= <<<EOT
 
     <li>
-        <label for="\$prefix-num-backups" class="left-label">Number of backups to keep</label>
-        <input type="text" name="num_backups" value="\$num_backups" id="\$prefix-num-backups" size="3" />
+        <label for="\$prefix-num-backups" class="text-label">Number of backups to keep</label>
+        <input type="text" name="num_backups" value="\$num_backups" id="\$prefix-num-backups" size="2" maxlength="2"/>
     </li>
 EOT;
     }
@@ -282,7 +288,7 @@ EOT;
             </div>
         </div>
     </li><li>
-        <input type="submit" value="Save \$name" />
+        <button type="submit"><span class="ui-icon ui-icon-pencil"></span>Save</button>
     </li>
 </ol>
 </form>
@@ -299,7 +305,7 @@ function t_backup_configuration($nothing)
 <ol class="configuration-list">
     <li>
         <label for="\$prefix-\$id">\$name</label>
-        <input type="button" name="\$name" value="Backup now" class="backup-button" id="\$prefix-\$id" />
+        <button name="\$name" class="backup-button" id="\$prefix-\$id"><span class="ui-icon ui-icon-gear"></span>Backup Now</button>
     </li>
 </ol>
 EOT;
@@ -313,7 +319,7 @@ function t_delete_configurations()
 <form id="\$type-delete-configurations" method="post" class="confirm" action="update.php">
     <input type="hidden" name="type" value="\$type" />
     \$configurations
-    <input type="submit" value="Delete Selected Configurations" />
+    <button type="submit"><span class="ui-icon ui-icon-trash"></span>Delete Selected</button>
 </form>
 EOT;
 }
@@ -337,7 +343,7 @@ function t_existing_backup_foot()
 {
     return <<<EOT
     
-        <input type="submit" id="\$prefix-delete" value="Delete selected backups" />
+        <button type="submit" id="\$prefix-delete"><span class="ui-icon ui-icon-trash"></span>Delete Selected</button>
     </form>
 EOT;
 }
@@ -383,7 +389,7 @@ function t_existing_backup_table_item()
                 </td><td>
                     <p>\$s3status</p>
                 </td><td>
-                    <input type="button" class="download-button" name="{\$b->filename}" value="Download" />
+                    <button class="download-button" name="{\$b->filename}"><span class="ui-icon ui-icon-disk"></span>Download</button>
                 </td>
             </tr>
 EOT;

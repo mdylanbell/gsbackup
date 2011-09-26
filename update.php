@@ -4,24 +4,24 @@ require_once("includes/settings.php");
 require_once("includes/classes.php");
 require_once("includes/logic.php");
 
-/*
-set_time_limit(0);
-ini_set('mysql.connect_timeout', -1);
-ini_set('default_socket_timeout', -1);
-ini_set('max_execution_time', -1);
-*/
-
 // Prepare ajax result
 function make_result($success, $text, $debug=null)
 {
     $result = array();
-    
+
     $result['success'] = $success;
     $result['text'] = $text;
-    
-    if ($debug != null)
+    $result['debug'] = '';
+
+    if (DEBUG && $debug != null) {
         $result['debug'] = $debug;
-    
+        $fh = fopen("debug.log", 'a');
+        if ( $fh ) {
+            fwrite($fh, "\n\n" . date('r') . ":\n" . $debug);
+            fclose($fh);
+        }
+    }
+ 
     return $result;
 }
 
@@ -32,29 +32,23 @@ function send_result(&$result)
     echo json_encode($result);
 }
 
+if (DEBUG) {
+    $fh = fopen("debug.log", 'a');
+    if ( $fh ) {
+        fwrite($fh, "\n\n" . date('r') . ": update.php called.\n");
+        fclose($fh);
+    }
+}
 
 $result = array();
 $type = $_POST['type'];
 unset($_POST['type']);
 
-// DEBUG
-$result['success'] = true;
-
 // Validate post information
 if (!$_SERVER['REQUEST_METHOD'] || $_SERVER['REQUEST_METHOD'] != 'POST' ||  !isset($type))
 {
-/* Check referrer, if from index.php then... */
-    /*
-        $result['success'] = false;
-        $result['text'] = "Invalid post.";
-        echo json_encode($result);
-    else
-    {
-    */
+    /* Check referrer, if from index.php then throw a 404 */
     header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
-    /*
-    }
-    */
     exit;
 }
 
@@ -192,11 +186,11 @@ switch ($type)
         if (!write_config_file($_POST, $error_text))
         {
             if (!$error_text)
-                $result = make_result(false, "Failed to write config file.");
+                $result = make_result(false, "Internal error: Failed to write config file.");
             else
                 $result = make_result(false, $error_text);
         } else
-            $result = make_result(true, "Updated configuration file.");
+            $result = make_result(true, "Updated configuration.");
             
         break;
         

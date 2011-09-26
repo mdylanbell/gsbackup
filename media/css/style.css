@@ -20,15 +20,16 @@ body {
     background-image: url(../images/tall_grad.png);
     background-color: white;
 
-	margin-bottom: 100px;
-	margin-top: 30px;
+    margin-bottom: 100px;
+    margin-top: 30px;
 
-	font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 14px;
 }
 
 a {
-	color: black;
-	text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 p a {
@@ -42,10 +43,10 @@ p a:hover {
 }
 
 body div.content {
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
 }
 
 h1, h2, h3, h4 {
@@ -53,11 +54,11 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	font-size: 175%;
+    font-size: 175%;
 }
 
 h2 {
-	font-size: 130%;
+    font-size: 130%;
 }
 
 h3 {
@@ -82,7 +83,7 @@ li {
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 16px;
-    min-height: 24px;
+    min-height: 23px;
 }
 
 li * {
@@ -105,10 +106,17 @@ li * {
 }
 
 .panel-trigger {
-	padding-bottom: 10px;
-	padding-top: 10px;
-	cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
 }
+
+/* Drop a shadow on panel-trigger headings for mouseover and tabstops
+.panel-trigger a:hover, .panel-trigger a:focus, .panel-trigger a:active
+{
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+}
+*/
 
 .panel-trigger input, .panel-trigger h2, .panel-trigger h3 {
     display: inline;
@@ -130,9 +138,9 @@ li * {
     display: none;
    
     margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 10px;
-	margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
 	
     padding-top: 7px;
     padding-right: 0px;
@@ -150,7 +158,7 @@ li * {
 }
 
 .panel2 {
-	background-color: #cfcfcf;
+    background-color: #cfcfcf;
 }
 
 .panel3 {
@@ -158,7 +166,7 @@ li * {
 }
 
 .select-list li:first-child {
-	font-size: 100%;
+    font-size: 100%;
     height: 26px;
     background-color: #efefef;
     width: 300px;
@@ -173,55 +181,67 @@ option {
 }
 
 .select-list li {
-	font-size: 80%;
-    padding-right: 8px;
-	padding-left: 0px;
-	padding-bottom: 0px;
-	padding-top: 0px;
-    height: 24px;
+    font-size: 80%;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    height: 23px;
     margin: 0px;
 }
 
 .select-list li p {
-	padding-right: 20px;
-	padding-left: 20px;
-	display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: inline;
 }
 
 .text-label {
-	padding-left: 3px;
-	display: block;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    display: block;
 }
 
+/*
 .select-list li * {
     vertical-align: middle;
 }
+*/
+
+.checkbox-label {
+    height: 23px;
+}
+
+.checkbox-label label {
+    position: relative;
+    top: 5px;
+}
 
 tr {
-	height: 10px;
-	font-size: 70%;
+    height: 10px;
+    font-size: 70%;
 }
 
 tr:first-child {
-	font-size: 100%;
+    font-size: 100%;
 }
 
 td {
-	height: 15px;
-	padding-right: 20px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+    height: 15px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     vertical-align: middle;
     max-width: 200px;
 }
 
 td:first-child {
-	padding: 0px 5px 4px 0px;
+    padding: 0px 5px 4px 0px;
 }
 
 .configuration-list label {
-	padding-right: 10px;
-	display: inline;
+    padding-right: 10px;
+    display: inline;
 }
 
 .error {
@@ -231,10 +251,23 @@ td:first-child {
 }
 
 .error ul li {
-	font-size: 75%;
-	list-style-type: disc;
-	margin: 2px 0px 2px 25px;
-	padding: 2px;
+    font-size: 75%;
+    list-style-type: disc;
+    margin: 2px 0px 2px 25px;
+    padding: 2px;
+}
+
+button {
+    font-size: 12px !important;
+}
+
+.ui-icon {
+    vertical-align: text-bottom;
+}
+
+
+.ui-button-text span {
+    display: inline-block;
 }
 
 /******************************************************************************
@@ -318,12 +351,38 @@ body > form > div.content {
     margin-top: 20px;
 }
 
+/*
 body > form > input {
     margin-left: 20px;
 }
+*/
 
 .installer-text {
     margin-left: 20px;
     width: 750px;
 }
+
+
+/* jQuery UI */
+/*
+.dialog-error .ui-dialog-titlebar {
+    
+}
+.dialog-error .ui-dialog-content {
+}
+*/
+
+.ui-dialog.ui-state-error {
+    border: 5px;
+    border-style: solid;
+}
+
+.ui-state-error .ui-dialog-titlebar {
+    /* Make new image that's red? based on media/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png */
+}
+
+div.ui-widget-overlay {
+    opacity: .65;
+}
+
 
