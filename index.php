@@ -15,10 +15,8 @@ function display_page($sections)
     {
         $s->render();
     }
-// Testing jquery.ui
-echo( '<div id="dialog"><p id="dialog-text"></p></div>' . "\n" );
-    
-    echo render_template("t_popup");
+
+    echo render_template("t_dialog");
     echo render_template("t_foot");
 }
 
@@ -158,23 +156,6 @@ if ($configurations)
                 )
             )
         );
-
-/* MDB: TODO        
-        $automation_config_layers[] = new Layer(
-            $c->name,
-            null, null,
-            new Layer(null, null
-                render_template("t_automation_configuration",
-                    array(
-                        "id" => $c->id,
-                        "type" => PREFIX_AUTOMATION_MODIFY,
-                        "prefix" => PREFIX_AUTOMATION_MODIFY . "-" . $c->name,
-                        "name" => $c->name,
-                        "type" => $a->type
-                    )
-                )
-        );
-*/
     }
     
     $conf_layers[] = new Layer("Modify Configurations", null, null, 

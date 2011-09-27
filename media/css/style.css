@@ -1,7 +1,7 @@
 /******************************************************************************
  * style.css
  *
- * All css styles for installer / popup / main application
+ * All css styles for installer / dialog / main application
  *
  ******************************************************************************/
 
@@ -165,6 +165,14 @@ li * {
     background-color: #bebebe;
 }
 
+.s3-options-panel {
+    background-color: #efefef;
+    width: 310px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
 .select-list li:first-child {
     font-size: 100%;
     height: 26px;
@@ -257,84 +265,6 @@ td:first-child {
     padding: 2px;
 }
 
-button {
-    font-size: 12px !important;
-}
-
-.ui-icon {
-    vertical-align: text-bottom;
-}
-
-
-.ui-button-text span {
-    display: inline-block;
-}
-
-/******************************************************************************
- * Popup CSS
- ******************************************************************************/
-
-#popup-background
-{
-    display:none;
-    position:fixed;
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    background:#000000;
-    border:1px solid #cecece;
-    z-index:1;
-}
-
-#popup
-{
-    display: none;
-    position: fixed;
-/*    height:384px; */
-/*    width: 350px; */
-    background: #FFFFFF;
-    border: 2px solid #cecece;
-    z-index: 2;
-    padding: 12px;
-    font-size: 13px;
-}
-
-#popup p
-{
-    float: left;
-}
-
-#popup h1
-{
-    text-align:left;
-    font-size:22px;
-    font-weight:700;
-    border-bottom:1px dotted #D3D3D3;
-    padding-bottom:2px;
-    margin-bottom:20px;
-}
-
-#popup-buttons
-{
-    display: block;
-    clear: left;
-    margin-top: 20px;
-}
-
-#popup-close
-{
-    cursor: pointer;
-    font-size:14px;
-    line-height:14px;
-    right:6px;
-    top:4px;
-    position:absolute;
-    color:#6fa5fd;
-    font-weight:700;
-    display:block;
-}
-
 /******************************************************************************
  * Installer CSS
  ******************************************************************************/
@@ -351,26 +281,14 @@ body > form > div.content {
     margin-top: 20px;
 }
 
-/*
-body > form > input {
-    margin-left: 20px;
-}
-*/
-
 .installer-text {
     margin-left: 20px;
     width: 750px;
 }
 
-
-/* jQuery UI */
-/*
-.dialog-error .ui-dialog-titlebar {
-    
-}
-.dialog-error .ui-dialog-content {
-}
-*/
+/******************************************************************************
+ * jQuery UI elements
+ ******************************************************************************/
 
 .ui-dialog.ui-state-error {
     border: 5px;
@@ -383,6 +301,19 @@ body > form > input {
 
 div.ui-widget-overlay {
     opacity: .65;
+}
+
+button {
+    font-size: 12px !important;
+}
+
+.ui-icon {
+    vertical-align: text-bottom;
+}
+
+
+.ui-button-text span {
+    display: inline-block;
 }
 
 

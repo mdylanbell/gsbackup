@@ -56,20 +56,14 @@ function t_foot()
 EOT;
 }
 
-function t_popup()
+
+function t_dialog()
 {
     return <<<EOT
-<div id="popup">
-    <div id="popup-text"></div>
-    <div id="popup-buttons">
-        <input type="button" id="popup-button-submit" value="Confirm" />
-        <input type="button" id="popup-button-cancel" class="popup-cancel" value="Cancel" />
-        <input type="button" id="popup-button-close" class="popup-close" value="OK" />
-    </div>
-</div>
-<div id="popup-background"></div>
+<div id="dialog"><p id="dialog-text"></p></div>
 EOT;
 }
+
 
 /******************************************************************************
  Select List
@@ -274,7 +268,7 @@ EOT;
             <option value="0"$s3_configuration_default>Use default settings</option>
             <option value="1"$s3_configuration_custom>Use custom settings</option>
         </select>
-        <div class="panel">
+        <div class="panel s3-options-panel">
             <div class="wrapper">
                 <ol>
                     <li>
