@@ -64,7 +64,7 @@ define('PREFIX_EXISTING_BACKUP', 'eb');
 
 define('ALLOWED_LABEL_CHARACTERS', '\w\-=\+#\.');  // Allowed characters (regex)
 
-define('VERSION', "1.1.1");
+define('VERSION', "1.2");
 
 define('TITLE', "(gs) Grid-Service Backup Tool");
 
